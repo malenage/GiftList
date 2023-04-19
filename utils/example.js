@@ -10,10 +10,12 @@ const root = merkleTree.getRoot();
 
 // find the proof that norman block is in the list 
 const name = 'Norman Block';
+// const name = 'Malena';
 const index = niceList.findIndex(n => n === name);
 const proof = merkleTree.getProof(index);
 
 // verify proof against the Merkle Root
+console.log(root);
 console.log( verifyProof(proof, name, root) ); // true, Norman Block is in the list!
 
 // TRY IT OUT: what happens if you try a name not in the list, or a fake proof?
